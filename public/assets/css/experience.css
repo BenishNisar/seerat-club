@@ -1,0 +1,500 @@
+/* ==========================================
+   SEERAT CLUB EXPERIENCE
+   ========================================== */
+
+.sc-experience,
+.sc-experience-dialog {
+  --sce-dark: #1f2b2c;
+  --sce-cream: #f5f7f3;
+  --sce-gold: #d7b46a;
+  --sce-border: #ded6c7;
+
+  font-family: "DM Sans", Arial, sans-serif;
+  color: #243031;
+}
+
+.sc-experience *,
+.sc-experience *::before,
+.sc-experience *::after,
+.sc-experience-dialog,
+.sc-experience-dialog *,
+.sc-experience-dialog *::before,
+.sc-experience-dialog *::after {
+  box-sizing: border-box;
+}
+
+.sc-experience {
+  position: relative;
+  padding: clamp(56px, 7vw, 100px) 0;
+  background:
+    radial-gradient(circle at 5% 8%, #d7b46a1c, transparent 30%),
+    radial-gradient(circle at 95% 92%, #6f9d9b20, transparent 30%),
+    var(--sce-cream);
+}
+
+.sc-experience-container {
+  width: min(1220px, 92%);
+  margin-inline: auto;
+}
+
+.sc-experience-heading {
+  max-width: 720px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.sc-experience-eyebrow {
+  display: inline-block;
+  padding: 8px 13px;
+  border: 1px solid var(--sce-border);
+  border-radius: 10px;
+  background: #ffffff;
+  color: #496052;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 1.8px;
+}
+
+.sc-experience .sc-experience-heading h2 {
+  margin: 17px 0 12px;
+  font-family: 'Baloo 2', 'SC Arabic', sans-serif;
+  font-size: clamp(32px, 4.2vw, 50px);
+  font-weight: 600;
+  line-height: 1.12;
+  color: var(--sce-dark);
+}
+
+.sc-experience .sc-experience-heading p {
+  max-width: 540px;
+  margin: 0 auto;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #526158;
+}
+
+.sc-experience-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.sc-experience-card {
+  appearance: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  min-height: 190px;
+  margin: 0;
+  padding: 23px 12px 18px;
+  overflow: hidden;
+  border: 1px solid #dcd6c7;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 0 #ded6c75c;
+  color: var(--sce-dark);
+  font-family: "DM Sans", Arial, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 280ms ease,
+    border-color 280ms ease,
+    box-shadow 280ms ease;
+}
+
+.sc-experience-card:nth-child(4n + 2) {
+  background: #e5ece1;
+}
+
+.sc-experience-card:nth-child(4n + 3) {
+  background: #e1eeeb;
+}
+
+.sc-experience-card:nth-child(4n + 4) {
+  background: #f4e7c7;
+}
+
+.sc-experience-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 15px;
+  border: 1px solid #ffffffb3;
+  border-radius: 18px;
+  background: #ffffff;
+  color: #526e60;
+  box-shadow: 0 4px 12px #1f2b2c08;
+  transition: transform 280ms ease;
+}
+
+.sc-experience-icon::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background: var(--sce-gold);
+}
+
+.sc-experience-icon i {
+  display: inline-block;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.sc-experience-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.sc-experience-hint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #526158;
+}
+
+.sc-experience-hint > span {
+  transition: transform 280ms ease;
+}
+
+.sc-experience-card:hover {
+  border-color: #a9b9a9;
+  box-shadow: 0 8px 0 #ded6c77a;
+  color: var(--sce-dark);
+  text-decoration: none;
+  transform: translateY(-4px);
+}
+
+.sc-experience-card:hover .sc-experience-icon {
+  transform: rotate(-5deg);
+}
+
+.sc-experience-card:hover .sc-experience-hint > span {
+  transform: translate(2px, -2px);
+}
+
+.sc-experience-card.sc-experience-more {
+  border-color: var(--sce-dark);
+  background: var(--sce-dark);
+  color: var(--sce-cream);
+}
+
+.sc-experience-more .sc-experience-icon {
+  border-color: #ffffff24;
+  background: #ffffff0d;
+  color: var(--sce-gold);
+}
+
+.sc-experience-more .sc-experience-hint {
+  color: #e2d1aa;
+}
+
+/* ==========================================
+   COMPACT MODAL
+   ========================================== */
+
+dialog.sc-experience-dialog {
+  position: fixed;
+  inset: 0;
+  width: min(660px, calc(100vw - 28px));
+  max-width: none;
+  max-height: calc(100vh - 28px);
+  max-height: calc(100dvh - 28px);
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #586258;
+  border-radius: 24px;
+  background: var(--sce-dark);
+  color: var(--sce-cream);
+  box-shadow: 0 28px 90px #10201d55;
+}
+
+.sc-experience-dialog::backdrop {
+  background: #142321b8;
+  backdrop-filter: blur(5px);
+}
+
+.sc-experience-dialog-shell {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 30px);
+  max-height: calc(100dvh - 30px);
+  background:
+    radial-gradient(circle at 95% 0%, #d7b46a14, transparent 45%),
+    var(--sce-dark);
+}
+
+.sc-experience-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  gap: 12px;
+  padding: 20px 24px 0;
+}
+
+.sc-experience-dialog-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 1.5px;
+  color: #e5c588;
+}
+
+.sc-experience-close {
+  appearance: none;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ded6c7;
+  border-radius: 12px;
+  background: #f5f7f3;
+  color: #1f2b2c;
+  font-family: Arial, sans-serif;
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 250ms ease;
+}
+
+.sc-experience-close:hover {
+  background: #d7b46a;
+}
+
+.sc-experience-dialog-body {
+  min-height: 0;
+  padding: 12px 24px 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+
+.sc-experience-dialog-body::-webkit-scrollbar {
+  display: none;
+}
+
+.sc-experience-dialog #sc-experience-dialog-title {
+  margin: 0 0 9px;
+  font-family: 'Baloo 2', 'SC Arabic', sans-serif;
+  font-size: clamp(27px, 4vw, 35px);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #e5c588;
+}
+
+.sc-experience-dialog #sc-experience-dialog-intro {
+  margin: 0 0 19px;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e8e4d8;
+}
+
+.sc-experience-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 12px;
+  padding: 17px;
+  border: 1px solid #455952;
+  border-radius: 16px;
+  background: #293a37;
+}
+
+.sc-experience-detail > div {
+  min-width: 0;
+}
+
+.sc-experience-step {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: var(--sce-gold);
+  color: var(--sce-dark);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sc-experience-dialog .sc-experience-detail h3 {
+  margin: 0 0 6px;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #e5c588;
+}
+
+.sc-experience-dialog .sc-experience-detail p {
+  margin: 0;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #f5f7f3;
+}
+
+.sc-experience-dialog-footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  gap: 10px;
+  margin: 6px 24px 0;
+  padding: 16px 0 22px;
+  border-top: 1px solid #45534b;
+}
+
+.sc-experience-primary,
+.sc-experience-secondary {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  margin: 0;
+  padding: 11px 16px;
+  border: 1px solid var(--sce-gold);
+  border-radius: 11px;
+  font-family: "Baloo 2", "DM Sans", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 250ms ease;
+}
+
+.sc-experience-primary {
+  background: var(--sce-gold);
+  color: var(--sce-dark);
+}
+
+.sc-experience-primary:hover {
+  background: #e5c588;
+  color: var(--sce-dark);
+  text-decoration: none;
+}
+
+.sc-experience-secondary {
+  border-color: #899387;
+  background: transparent;
+  color: var(--sce-cream);
+}
+
+.sc-experience-secondary:hover {
+  background: #344641;
+  color: var(--sce-cream);
+}
+
+.sc-experience-card:focus-visible {
+  outline: 3px solid #476d64;
+  outline-offset: 4px;
+}
+
+.sc-experience-dialog :is(button, a):focus-visible {
+  outline: 3px solid #e5c588;
+  outline-offset: 3px;
+}
+
+body.sc-experience-is-open {
+  overflow: hidden;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .sc-experience-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+  .sc-experience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+  }
+
+  .sc-experience-card {
+    min-height: 180px;
+    padding: 21px 10px 17px;
+    border-radius: 18px;
+  }
+
+  .sc-experience-name {
+    font-size: 13px;
+  }
+
+  .sc-experience .sc-experience-heading p {
+    font-size: 14px;
+  }
+
+  .sc-experience-dialog-header {
+    padding: 16px 17px 0;
+  }
+
+  .sc-experience-dialog-body {
+    padding: 14px 17px 0;
+  }
+
+  .sc-experience-detail {
+    gap: 11px;
+    padding: 14px;
+  }
+
+  .sc-experience-dialog-footer {
+    margin-inline: 17px;
+    padding-bottom: 17px;
+  }
+
+  .sc-experience-dialog-footer > * {
+    width: 100%;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .sc-experience-card,
+  .sc-experience-icon,
+  .sc-experience-hint > span,
+  .sc-experience-close,
+  .sc-experience-primary,
+  .sc-experience-secondary {
+    transition: none;
+  }
+
+  .sc-experience-card:hover,
+  .sc-experience-card:hover .sc-experience-icon,
+  .sc-experience-card:hover .sc-experience-hint > span {
+    transform: none;
+  }
+}

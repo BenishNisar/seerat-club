@@ -1,0 +1,396 @@
+/* ==========================================================
+   SEERAT CLUB — PAST EVENTS REDESIGN
+   Scoped under .sc-events-page to protect other pages.
+   ========================================================== */
+
+.sc-events-page {
+  --sce-dark: #212d2e;
+  --sce-deep: #172323;
+  --sce-gold: #c9a24d;
+  --sce-gold-light: #e7c975;
+  --sce-cream: #f7f5ee;
+  --sce-white: #ffffff;
+  --sce-text: #34423c;
+  --sce-muted: #65716b;
+  --sce-border: #ded6c7;
+  font-family: 'DM Sans', Arial, sans-serif;
+  background: var(--sce-white);
+  color: var(--sce-text);
+  display: flow-root; /* Fixes float collapsing */
+  clear: both;
+  width: 100%;
+}
+
+.sc-events-page * {
+  box-sizing: border-box;
+}
+
+.sc-events-page .sc-container {
+  width: min(1220px, 92%);
+  margin: 0 auto;
+  display: flow-root;
+}
+
+.sc-events-page .sc-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sce-gold);
+  margin-bottom: 15px;
+}
+
+.sc-events-page .sc-title {
+  font-family: 'Baloo 2', Arial, sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--sce-dark);
+  margin-bottom: 20px;
+}
+
+.sc-events-page .sc-copy {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--sce-muted);
+}
+
+/* ==========================================
+   1. HERO SECTION
+   ========================================== */
+.sc-events-page .sce-hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sce-deep);
+  width: 100%;
+}
+
+.sc-events-page .sce-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.sc-events-page .sce-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.5;
+}
+
+.sc-events-page .sce-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(23, 35, 35, 0.4) 0%, rgba(23, 35, 35, 0.95) 100%);
+}
+
+.sc-events-page .sce-hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 900px;
+  padding: 100px 0;
+}
+
+.sc-events-page .sce-hero-content .sc-eyebrow {
+  color: var(--sce-gold-light);
+}
+
+.sc-events-page .sce-hero-title {
+  font-family: 'Baloo 2', Arial, sans-serif;
+  font-size: clamp(48px, 7vw, 84px);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--sce-white);
+  margin-bottom: 25px;
+  letter-spacing: -0.02em;
+}
+
+.sc-events-page .sce-hero-title em {
+  font-style: normal;
+  color: var(--sce-gold-light);
+}
+
+.sc-events-page .sce-hero-desc {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   2. SEERAT CAMP SECTION
+   ========================================== */
+.sc-events-page .sce-camp-section {
+  padding: 100px 0;
+  background: var(--sce-cream);
+  width: 100%;
+  display: flow-root;
+}
+
+.sc-events-page .sce-camp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.sc-events-page .sce-camp-collage {
+  position: relative;
+  height: 500px;
+}
+
+.sc-events-page .sce-camp-collage img {
+  position: absolute;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+.sc-events-page .sce-camp-img-1 {
+  width: 70%;
+  height: 380px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  border: 8px solid var(--sce-white);
+}
+
+.sc-events-page .sce-camp-img-2 {
+  width: 60%;
+  height: 320px;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  border: 8px solid var(--sce-white);
+}
+
+/* ==========================================
+   3. EDITORIAL POSTER GRID (Cycle 1)
+   ========================================== */
+.sc-events-page .sce-events-section {
+  padding: 100px 0;
+  background: var(--sce-white);
+  width: 100%;
+  display: flow-root;
+}
+
+.sc-events-page .sce-section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sc-events-page .sce-cycle-label {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--sce-border);
+}
+
+.sc-events-page .sce-cycle-label h3 {
+  font-family: 'Baloo 2', Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--sce-dark);
+  margin: 0;
+}
+
+.sc-events-page .sce-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.sc-events-page .sce-event-poster {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.sc-events-page .sce-poster-frame {
+  background: var(--sce-cream);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(33, 45, 46, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sc-events-page .sce-event-poster:hover .sce-poster-frame {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(33, 45, 46, 0.12);
+}
+
+.sc-events-page .sce-poster-frame img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  object-fit: contain; 
+}
+
+.sc-events-page .sce-poster-info {
+  padding: 0 10px;
+}
+
+.sc-events-page .sce-session-num {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--sce-gold);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.sc-events-page .sce-poster-info h3 {
+  font-family: 'Baloo 2', Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--sce-dark);
+  margin-bottom: 15px;
+}
+
+.sc-events-page .sce-poster-info p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--sce-muted);
+  margin-bottom: 20px;
+}
+
+.sc-events-page .sc-textlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--sce-dark);
+  text-decoration: none;
+  border-bottom: 1px solid var(--sce-gold);
+  padding-bottom: 3px;
+  transition: color 0.3s ease;
+}
+
+.sc-events-page .sc-textlink:hover {
+  color: var(--sce-gold);
+}
+
+.sc-events-page .sc-textlink i {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.sc-events-page .sc-textlink:hover i {
+  transform: translateX(4px);
+}
+
+/* ==========================================
+   4. HORIZONTAL LIST (Cycle 2)
+   ========================================== */
+.sc-events-page .sce-horizontal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.sc-events-page .sce-horizontal-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  align-items: center;
+  background: var(--sce-cream);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.sc-events-page .sce-horizontal-card:hover {
+  transform: translateX(5px);
+}
+
+.sc-events-page .sce-h-img {
+  height: 100%;
+  min-height: 250px;
+}
+
+.sc-events-page .sce-h-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sc-events-page .sce-h-body {
+  padding: 30px 30px 30px 0;
+}
+
+.sc-events-page .sce-h-body h3 {
+  font-family: 'Baloo 2', Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--sce-dark);
+  margin-bottom: 10px;
+}
+
+.sc-events-page .sce-h-body p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--sce-muted);
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+/* ==========================================
+   5. RESPONSIVE
+   ========================================== */
+@media (max-width: 992px) {
+  .sc-events-page .sce-camp-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .sc-events-page .sce-camp-collage {
+    height: 400px;
+  }
+
+  .sc-events-page .sce-editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sc-events-page .sce-horizontal-card {
+    grid-template-columns: 1fr;
+  }
+
+  .sc-events-page .sce-h-img {
+    height: 250px;
+  }
+
+  .sc-events-page .sce-h-body {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sc-events-page .sce-hero-title {
+    font-size: 42px;
+  }
+  
+  .sc-events-page .sce-camp-collage {
+    height: 300px;
+  }
+
+  .sc-events-page .sce-camp-img-1,
+  .sc-events-page .sce-camp-img-2 {
+    height: 200px;
+    border-width: 4px;
+  }
+
+  .sc-events-page .sce-poster-frame {
+    padding: 10px;
+  }
+}

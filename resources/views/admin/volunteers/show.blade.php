@@ -1,0 +1,8 @@
+@extends('admin.layout')
+@section('title','Volunteer Request')
+@section('section','Volunteers')
+@section('content')
+<div class="page-head"><div><h1>{{ $volunteer->full_name }}</h1><p>Volunteer request submitted {{ $volunteer->created_at->format('d M Y, h:i A') }}</p></div><a class="btn btn-secondary" href="{{ route('admin.volunteers.index') }}">Back</a></div>
+<div class="grid two"><section class="card panel"><h2>Contact details</h2><div class="detail-list"><div class="key">Email</div><div class="value">{{ $volunteer->email }}</div><div class="key">Phone</div><div class="value">{{ $volunteer->phone }}</div><div class="key">Support type</div><div class="value">{{ $volunteer->support_type ?: '—' }}</div><div class="key">Message</div><div class="value">{!! nl2br(e($volunteer->message ?: '—')) !!}</div></div></section>
+<section class="card panel"><h2>Management</h2><form method="POST" action="{{ route('admin.volunteers.update',$volunteer) }}">@csrf @method('PUT')<div class="field"><label>Status</label><select class="select" name="status">@foreach(['new','contacted','approved','declined','closed'] as $s)<option value="{{ $s }}" @selected($volunteer->status===$s)>{{ ucfirst($s) }}</option>@endforeach</select></div><div class="field mt16"><label>Internal notes</label><textarea class="textarea" name="admin_notes">{{ old('admin_notes',$volunteer->admin_notes) }}</textarea></div><button class="btn btn-primary mt16">Save</button></form><form class="mt16" method="POST" action="{{ route('admin.volunteers.destroy',$volunteer) }}">@csrf @method('DELETE')<button class="btn btn-danger" data-confirm="Delete this volunteer request permanently?">Delete</button></form></section></div>
+@endsection

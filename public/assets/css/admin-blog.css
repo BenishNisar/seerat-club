@@ -1,0 +1,237 @@
+:root {
+    --admin-dark: #183031;
+    --admin-dark-2: #223e3e;
+    --admin-gold: #d2a94d;
+    --admin-cream: #f8f5ee;
+    --admin-white: #ffffff;
+    --admin-muted: #6f7c7c;
+    --admin-border: #e4e7e4;
+    --admin-danger: #b94646;
+}
+
+.blog-admin {
+    background: #f7f8f6;
+    min-height: 100vh;
+    padding: 60px 0 100px;
+}
+
+.blog-admin-container {
+    width: min(1180px, calc(100% - 40px));
+    margin: auto;
+}
+
+.blog-admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.blog-admin-eyebrow {
+    color: var(--admin-gold);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.blog-admin-header h1 {
+    margin: 8px 0 0;
+    color: var(--admin-dark);
+    font-size: 42px;
+}
+
+.admin-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 21px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--admin-dark);
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.admin-btn:hover {
+    background: var(--admin-gold);
+    color: var(--admin-dark);
+}
+
+.admin-btn-light {
+    background: #fff;
+    color: var(--admin-dark);
+    border: 1px solid var(--admin-border);
+}
+
+.admin-btn-danger {
+    background: #fff0f0;
+    color: var(--admin-danger);
+}
+
+.admin-card {
+    padding: 30px;
+    border: 1px solid var(--admin-border);
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 12px 35px rgba(0,0,0,.035);
+}
+
+.admin-grid {
+    display: grid;
+    gap: 25px;
+}
+
+.admin-grid-two {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.admin-field label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--admin-dark);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.admin-field input,
+.admin-field select,
+.admin-field textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--admin-border);
+    border-radius: 10px;
+    outline: none;
+    background: #fff;
+}
+
+.admin-field input:focus,
+.admin-field select:focus,
+.admin-field textarea:focus {
+    border-color: var(--admin-gold);
+}
+
+.admin-field-full {
+    grid-column: 1 / -1;
+}
+
+.admin-checkbox {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.admin-checkbox input {
+    width: auto;
+}
+
+.admin-alert {
+    margin-bottom: 25px;
+    padding: 15px 18px;
+    border-radius: 10px;
+}
+
+.admin-alert-success {
+    color: #285c38;
+    background: #e8f7ed;
+}
+
+.admin-alert-error {
+    color: #7d2b2b;
+    background: #fdeaea;
+}
+
+.admin-table-wrap {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th {
+    padding: 15px;
+    text-align: left;
+    color: #5c6969;
+    background: var(--admin-cream);
+}
+
+.admin-table td {
+    padding: 15px;
+    border-top: 1px solid var(--admin-border);
+    vertical-align: middle;
+}
+
+.admin-blog-thumb {
+    width: 85px;
+    height: 65px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.admin-actions form {
+    display: inline;
+}
+
+.admin-filter {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.admin-filter input,
+.admin-filter select {
+    padding: 12px 14px;
+    border: 1px solid var(--admin-border);
+    border-radius: 10px;
+}
+
+.blog-current-image {
+    width: 240px;
+    max-width: 100%;
+    margin-top: 12px;
+    border-radius: 14px;
+}
+
+.note-editor.note-frame {
+    border: 1px solid var(--admin-border) !important;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.note-toolbar {
+    background: var(--admin-cream) !important;
+}
+
+.note-editable {
+    min-height: 450px;
+    padding: 25px !important;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+@media(max-width: 768px) {
+
+    .blog-admin-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-grid-two {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-filter {
+        grid-template-columns: 1fr;
+    }
+}
